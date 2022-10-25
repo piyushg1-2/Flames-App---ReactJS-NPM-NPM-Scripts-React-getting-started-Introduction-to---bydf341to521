@@ -5,7 +5,7 @@ import '../styles/App.css';
 function App() {
 const [first,setFirst] = useState("");
 const [second,setSecond] = useState("");
-const [err,setErr]=useState('');
+// const [err,setErr]=useState('');
 const [ans,setAns]=useState('');
      
    function  handleFirst(e){
@@ -32,11 +32,11 @@ const [ans,setAns]=useState('');
     function handleClick(){
         if(first=="" ||second=="")
         {
-            setErr('Please Enter valid input');
+            setAns('Please Enter valid input');
             return ;
         }
         else{
-            setErr("");
+            setAns("");
              let s1=first; 
              let s2=second;
             
@@ -94,7 +94,7 @@ const [ans,setAns]=useState('');
                
                <input data-testid="input1" type='text' value={first} onChange={(e)=>handleFirst(e)} />
                <input data-testid="input2" type='text' value={second} onChange={(e)=>handleSecond(e)}/>
-               <p id="para">{err}</p>
+               {/* <p id="para">{err}</p> */}
                <button data-testid="calculate_relationship"  onClick={()=>handleClick()}>Calculate Relationship Future</button>
                <button data-testid="clear" onClick={()=>handleClear()}>clear</button>
              
